@@ -1,10 +1,10 @@
 <?php
-namespace BackendBundle\Model;
+namespace Src\BackendBundle\Model;
 use \PDO;
 use \App\Model;
-use \BackendBundle\Clases\Usuario;
-use \BackendBundle\Clases\Vehiculo;
-use \BackendBundle\Clases\Compra;
+use \Src\BackendBundle\Clases\Usuario;
+use \Src\BackendBundle\Clases\Vehiculo;
+use \Src\BackendBundle\Clases\Compra;
 class CompraModel extends Model
 {
     private $mod_r;

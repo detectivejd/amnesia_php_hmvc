@@ -1,9 +1,9 @@
 <?php
-namespace BackendBundle\Controller;
+namespace Src\BackendBundle\Controller;
 use \App\Controller;
 use \App\Session;
-use \BackendBundle\Clases\Rol;
-use \BackendBundle\Clases\Usuario;
+use \Src\BackendBundle\Clases\Rol;
+use \Src\BackendBundle\Clases\Usuario;
 class UsuariosController extends Controller
 {
     function __construct(){

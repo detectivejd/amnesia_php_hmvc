@@ -1,8 +1,8 @@
 <?php
-namespace BackendBundle\Controller;
+namespace Src\BackendBundle\Controller;
 use \App\Controller;
 use \App\Session;
-use \BackendBundle\Clases\Rol;
+use \Src\BackendBundle\Clases\Rol;
 class RolesController extends Controller 
 {
     function __construct() {

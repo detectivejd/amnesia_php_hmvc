@@ -1,5 +1,5 @@
 <h3>Crear Compra</h3>
-<form action="index.php?c=compras&a=add" method="post" name="frmadd_com">
+<form action="index.php?b=backend&c=compras&a=add" method="post" name="frmadd_com">
     <table>
         <tr>
             <td><label for="tcom">Tipo de Compra:</label></td>
@@ -51,6 +51,6 @@
     </table>
     <p>
         <input type="submit" value="Aceptar" name="btnaceptar" />&nbsp;
-        <a href="index.php?c=compras&a=index"><input type="button" value="Cancelar" /></a>
+        <a href="index.php?b=backend&c=compras&a=index"><input type="button" value="Cancelar" /></a>
     </p>
 </form>

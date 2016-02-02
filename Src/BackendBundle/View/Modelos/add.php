@@ -1,5 +1,5 @@
 <h3>Crear Modelo</h3>
-<form method="post" action="index.php?c=modelos&a=add" name="frm_addmod">
+<form method="post" action="index.php?b=backend&c=modelos&a=add" name="frm_addmod">
     <table>
         <tr>
             <td><label for="nom">Nombre del Modelo:</label></td>
@@ -20,6 +20,6 @@
     </table>
     <p>
         <input type="submit" value="Aceptar" name="btnaceptar" />&nbsp;
-        <a href="index.php?c=modelos&a=index"><input type="button" value="Cancelar" /></a>
+        <a href="index.php?b=backend&c=modelos&a=index"><input type="button" value="Cancelar" /></a>
     </p>
 </form>

@@ -1,7 +1,7 @@
 <?php
-namespace BackendBundle\Clases;
+namespace Src\BackendBundle\Clases;
 use \App\IPersiste;
-use \Model\RolModel;
+use \Src\BackendBundle\Model\RolModel;
 class Rol implements IPersiste 
 {
     private $id;

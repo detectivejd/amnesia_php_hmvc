@@ -1,10 +1,10 @@
 <?php
-namespace BackendBundle\Model;
+namespace \Src\BackendBundle\Model;
 use \PDO;
 use \App\Model;
 use \App\Session;
-use \BackendBundle\Clases\Marca;
-use \BackendBundle\Clases\Modelo;
+use \Src\BackendBundle\Clases\Marca;
+use \Src\BackendBundle\Clases\Modelo;
 class ModeloModel extends Model
 {
     private $mod_mar;

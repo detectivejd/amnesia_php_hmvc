@@ -1,5 +1,5 @@
 <h3>Editar Vehículo</h3>
-<form method="post" action="index.php?c=vehiculos&a=edit&p=<?php echo \App\Session::get('id'); ?>" name="frm_editveh">
+<form method="post" action="index.php?b=backend&c=vehiculos&a=edit&p=<?php echo \App\Session::get('id'); ?>" name="frm_editveh">
     <table>
         <tr>
             <td><label for="id">Número del Vehículo:</label></td>
@@ -25,7 +25,7 @@
             <td><label for="foto">Foto del Vehículo:</label></td>
             <td>
                 <img src="<?php echo $vehiculo->getFoto(); ?>" width='174' height='100'>&nbsp;
-                <a href="index.php?c=vehiculos&a=foto">[Cambiar]</a>
+                <a href="index.php?b=backend&c=vehiculos&a=foto">[Cambiar]</a>
             </td>
         </tr>
         <tr>
@@ -54,6 +54,6 @@
     </table>
     <p>
         <input type="submit" value="Aceptar" name="btnaceptar" />&nbsp;
-        <a href="index.php?c=vehiculos&a=index"><input type="button" value="Cancelar" /></a>
+        <a href="index.php?b=backend&c=vehiculos&a=index"><input type="button" value="Cancelar" /></a>
     </p>
 </form>

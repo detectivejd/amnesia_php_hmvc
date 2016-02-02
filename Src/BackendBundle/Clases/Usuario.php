@@ -1,7 +1,7 @@
 <?php
-namespace BackendBundle\Clases;
+namespace Src\BackendBundle\Clases;
 use \App\IPersiste;
-use \Model\UsuarioModel;
+use \Src\BackendBundle\Model\UsuarioModel;
 class Usuario implements IPersiste
 {
     private $id;

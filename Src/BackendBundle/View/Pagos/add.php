@@ -4,7 +4,7 @@
     <strong>Pago Mínimo:<?php echo " $" .$compra->obtenerPagoMinimo(); ?></strong>&nbsp;
     <strong>Cuotas Restantes:<?php echo " " .$compra->obtenerCuotasRestantes(); ?></strong>
 </p>
-<form action="index.php?c=pagos&a=add&p=<?php echo \App\Session::get('id'); ?>" method="post" name="frmadd_pag">
+<form action="index.php?b=backend&c=pagos&a=add&p=<?php echo \App\Session::get('id'); ?>" method="post" name="frmadd_pag">
     <table>
         <tr>
             <td><label for="pag">Número del Pago:</label></td>
@@ -25,6 +25,6 @@
     </table>
     <p>
         <input type="submit" value="Aceptar" name="btnaceptar" />&nbsp;
-        <a href="index.php?c=pagos&a=index&p=<?php echo \App\Session::get('id') ?>"><input type="button" value="Cancelar" /></a>
+        <a href="index.php?b=backend&c=pagos&a=index&p=<?php echo \App\Session::get('id') ?>"><input type="button" value="Cancelar" /></a>
     </p>
 </form>

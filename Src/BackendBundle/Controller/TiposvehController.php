@@ -1,8 +1,8 @@
 <?php
-namespace BackendBundle\Controller;
+namespace Src\BackendBundle\Controller;
 use \App\Controller;
 use \App\Session;
-use \BackendBundle\Clases\TipoVehiculo;
+use \Src\BackendBundle\Clases\TipoVehiculo;
 class TiposvehController extends Controller
 {
     function __construct() {

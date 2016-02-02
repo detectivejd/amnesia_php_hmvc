@@ -1,11 +1,11 @@
 <?php
-namespace BackendBundle\Controller;
+namespace Src\BackendBundle\Controller;
 use \App\Controller;
 use \App\Session;
 use \Lib\Upload;
-use \BackendBundle\Clases\TipoVehiculo;
-use \BackendBundle\Clases\Modelo;
-use \BackendBundle\Clases\Vehiculo;
+use \Src\BackendBundle\Clases\TipoVehiculo;
+use \Src\BackendBundle\Clases\Modelo;
+use \Src\BackendBundle\Clases\Vehiculo;
 class VehiculosController extends Controller
 {
     private $upload;

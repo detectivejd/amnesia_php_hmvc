@@ -1,5 +1,5 @@
     <h3>Crear Usuario</h3>
-    <form method="post" name="frmadd_user" action="index.php?c=usuarios&a=add">
+    <form method="post" name="frmadd_user" action="index.php?b=backend&c=usuarios&a=add">
         <table>
             <tr>
                 <td><label for="nick">Nombre de Usuario: (*)</label></td>
@@ -38,7 +38,7 @@
         <p>
            <input type="submit" value="Aceptar" name="btnaceptar" /> 
            <?php if(\App\Session::get("log_in")!= null and \App\Session::get("log_in")->getRol()->getNombre() == "ADMIN"){ ?>
-                  &nbsp;<a href="index.php?c=usuarios&a=index"><input type="button" value="Cancelar" name="btncancelar" /></a> 
+                  &nbsp;<a href="index.php?b=backend&c=usuarios&a=index"><input type="button" value="Cancelar" name="btncancelar" /></a> 
            <?php } ?>
         </p>
     </form>

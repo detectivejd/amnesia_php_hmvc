@@ -1,9 +1,9 @@
 <?php
-namespace BackendBundle\Controller;
+namespace Src\BackendBundle\Controller;
 use \App\Controller;
 use \App\Session;
-use \BackendBundle\Clases\Compra;
-use \BackendBundle\Clases\Pago;
+use \Src\BackendBundle\Clases\Compra;
+use \Src\BackendBundle\Clases\Pago;
 class PagosController extends Controller
 {
     function __construct() {

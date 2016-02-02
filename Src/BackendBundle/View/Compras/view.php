@@ -27,5 +27,5 @@
     
 </table>
 <p>     
-    <a href="index.php?c=compras&a=index"><input type="button" value="Volver" /></a>
+    <a href="index.php?b=backend&c=compras&a=index"><input type="button" value="Volver" /></a>
 </p>

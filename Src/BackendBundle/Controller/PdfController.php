@@ -1,7 +1,7 @@
 <?php
-namespace BackendBundle\Controller;
+namespace Src\BackendBundle\Controller;
 use \App\Controller;
-use \BackendBundle\Clases\Vehiculo;
+use \Src\BackendBundle\Clases\Vehiculo;
 include('./Lib/fpdf/FPDF.php');
 class PdfController extends Controller
 {

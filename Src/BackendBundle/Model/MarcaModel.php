@@ -1,9 +1,9 @@
 <?php
-namespace BackendBundle\Model;
+namespace Src\BackendBundle\Model;
 use \PDO;
 use \App\Model;
 use \App\Session;
-use \BackendBundle\Clases\Marca;
+use \Src\BackendBundle\Clases\Marca;
 class MarcaModel extends Model
 {
     function __construct() {

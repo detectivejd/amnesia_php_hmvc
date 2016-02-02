@@ -1,5 +1,5 @@
 <?php
-namespace BackendBundle\Clases;
+namespace Src\BackendBundle\Clases;
 class Pago {
     private $id;
     private $fecpago;

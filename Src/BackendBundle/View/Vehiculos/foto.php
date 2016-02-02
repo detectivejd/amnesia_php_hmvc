@@ -1,5 +1,5 @@
 <h3>Editar Foto del Vehículo</h3>
-<form method="post" name="frm_imgveh" action="index.php?c=vehiculos&a=foto" enctype="multipart/form-data">
+<form method="post" name="frm_imgveh" action="index.php?b=backend&c=vehiculos&a=foto" enctype="multipart/form-data">
     <fieldset style="display: inline-block;">
         <legend>Seleccione su nueva imagen:</legend>
         <p align="center">
@@ -11,6 +11,6 @@
     </fieldset>
     <p>
         <input type="submit" name="btnaceptar" value="Aceptar" />&nbsp;
-        <a href="index.php?c=vehiculos&a=edit&p=<?php echo \App\Session::get('id'); ?>"><input type="button" value="Cancelar" /></a>
+        <a href="index.php?b=backend&c=vehiculos&a=edit&p=<?php echo \App\Session::get('id'); ?>"><input type="button" value="Cancelar" /></a>
     </p>
 </form>

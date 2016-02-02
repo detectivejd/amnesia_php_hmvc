@@ -1,7 +1,7 @@
 <?php
-namespace BackendBundle\Clases;
+namespace Src\BackendBundle\Clases;
 use \App\IPersiste;
-use \Model\CompraModel;
+use \Src\BackendBundle\Model\CompraModel;
 class Compra implements IPersiste
 {
     private $id;

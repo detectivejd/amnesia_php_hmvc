@@ -1,9 +1,9 @@
 <?php
-namespace BackendBundle\Model;
+namespace \Src\BackendBundle\Model;
 use \PDO;
 use \App\Model;
 use \App\Session;
-use \BackendBundle\Clases\TipoVehiculo;
+use \Src\BackendBundle\Clases\TipoVehiculo;
 class TipovehModel extends Model
 {
     function __construct() {

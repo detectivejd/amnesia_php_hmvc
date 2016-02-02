@@ -1,9 +1,9 @@
 <?php
-namespace BackendBundle\Model;
+namespace Src\BackendBundle\Model;
 use \PDO;
 use \App\Model;
 use \App\Session;
-use \BackendBundle\Clases\Usuario;
+use \Src\BackendBundle\Clases\Usuario;
 class UsuarioModel extends Model
 {    
     private $mod_r;

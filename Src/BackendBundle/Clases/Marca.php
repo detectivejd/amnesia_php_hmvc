@@ -1,7 +1,7 @@
 <?php
-namespace BackendBundle\Clases;
+namespace Src\BackendBundle\Clases;
 use \App\IPersiste;
-use \Model\MarcaModel;
+use \Src\BackendBundle\Model\MarcaModel;
 class Marca implements IPersiste
 {
     private $id;

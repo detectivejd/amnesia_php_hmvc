@@ -1,7 +1,7 @@
 <h3>Mostrar Compras por período</h3>
 <p>
-    <a href="index.php?c=consultas&a=index">[Volver]</a>
-    <form action="index.php?c=consultas&a=cons1" method="post" name="frmcons1">
+    <a href="index.php?b=consulta&c=consultas&a=index">[Volver]</a>
+    <form action="index.php?b=consulta&c=consultas&a=cons1" method="post" name="frmcons1">
         <input type="radio" name="rbtnperiodo" value="d" /><b>Día</b>&nbsp;
         <input type="radio" name="rbtnperiodo" value="m" /><b>Mes</b>&nbsp;
         <input type="radio" name="rbtnperiodo" value="a" /><b>Año</b>&nbsp;
@@ -29,18 +29,18 @@
 <?php if ($paginador != null) { ?> 
     <br />
     <?php if($paginador['primero']) { ?>	
-        <a href="<?php echo 'index.php?c=compras&a=index&p=' . $paginador['primero']; ?>">[Primero]</a>        
+        <a href="<?php echo 'index.php?b=consulta&c=compras&a=index&p=' . $paginador['primero']; ?>">[Primero]</a>        
     <?php } ?>
     &nbsp;
     <?php if($paginador['anterior']) { ?>	
-        <a href="<?php echo 'index.php?c=compras&a=index&p=' . $paginador['anterior']; ?>">[Anterior]</a>	
+        <a href="<?php echo 'index.php?b=consulta&c=compras&a=index&p=' . $paginador['anterior']; ?>">[Anterior]</a>	
     <?php } ?>
     &nbsp;
     <?php if($paginador['siguiente']) { ?>	
-        <a href="<?php echo 'index.php?c=compras&a=index&p=' . $paginador['siguiente']; ?>">[Siguiente]</a>
+        <a href="<?php echo 'index.php?b=consulta&c=compras&a=index&p=' . $paginador['siguiente']; ?>">[Siguiente]</a>
     <?php } ?>
     &nbsp;
     <?php if($paginador['ultimo']) { ?>	
-        <a href="<?php echo 'index.php?c=compras&a=index&p=' . $paginador['ultimo']; ?>">[Último]</a>	
+        <a href="<?php echo 'index.php?b=consulta&c=compras&a=index&p=' . $paginador['ultimo']; ?>">[Último]</a>	
     <?php }     
     } ?>

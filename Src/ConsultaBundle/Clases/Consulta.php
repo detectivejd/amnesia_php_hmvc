@@ -1,7 +1,7 @@
 <?php
-namespace ConsultaBundle\Clases;
+namespace Src\ConsultaBundle\Clases;
 use \App\IPersiste;
-use \ConsultaBundle\Model\ConsultaModel;
+use \Src\ConsultaBundle\Model\ConsultaModel;
 class Consulta implements IPersiste
 {
     private $modelo;

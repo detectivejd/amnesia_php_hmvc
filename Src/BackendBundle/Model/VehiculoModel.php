@@ -1,10 +1,10 @@
 <?php
-namespace BackendBundle\Model;
+namespace Src\BackendBundle\Model;
 use \PDO;
 use \App\Model;
 use \App\Session;
-use \BackendBundle\Clases\Modelo;
-use \BackendBundle\Clases\Vehiculo;
+use \Src\BackendBundle\Clases\Modelo;
+use \Src\BackendBundle\Clases\Vehiculo;
 class VehiculoModel extends Model
 {
     private $mod_tv;
@@ -105,6 +105,5 @@ class VehiculoModel extends Model
         $consulta = $this->getBD()->prepare($sql);
         $consulta->execute(array($veh->getId()));
         return ($consulta->rowCount() > 0) ? $veh->getId() : null;
-    }
-        
+    }      
 }
