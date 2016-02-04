@@ -18,7 +18,8 @@ class UsuariosController extends Controller
         else if (isset($_POST['login'])) {
             if(empty($_POST['user']) or empty($_POST['pass'])){ 
                 Session::set("msg","Ingrese los datos obligatorios (*) para continuar.");
-            } else {
+            } 
+            else {
                 $usuario = (new Usuario())->findByLogin(array($_POST['user'],$_POST['pass']));
                 if (isset($usuario)){
                     Session::login();
@@ -26,7 +27,8 @@ class UsuariosController extends Controller
                     Session::set("msg","Acceso concedido... Usuario: ". $usuario->getNick());
                     header("Location:index.php?c=main&a=index");
                     exit();
-                } else {
+                } 
+                else {
                     Session::set("msg","Acceso denegado.");
                 }                 
             }            
@@ -36,7 +38,7 @@ class UsuariosController extends Controller
     public function logout(){
         Session::logout();
         Session::set("msg","Acceso finalizado.");
-        $this->redirect(array('Main','index.php'));
+        header("Location:index.php?c=main&a=index");
     }  
     public function tareas(){
         if($this->checkUser()){ 
@@ -51,13 +53,13 @@ class UsuariosController extends Controller
                 $usuario = new Usuario(0, $_POST['txtnick'], md5($_POST['txtpass']), $_POST['txtcor'], $_POST['txtnom'],$_POST['txtape'], 1, $rol);
                 $id = $usuario->save();
                 Session::set("msg",(isset($id)) ? "Usuario Creado" : Session::get('msg'));
-                $ruta= $this->checkUser() ? "index.php?c=usuarios&a=index" : "index.php?c=main&a=index";
+                $ruta= $this->checkUser() ? "index.php?b=backend&c=usuarios&a=index" : "index.php?c=main&a=index";
                 header("Location:".$ruta);                
                 exit();
             }
         }
         $this->redirect(array('add.php'), array(
-            "roles" => (new Rol())->obtenerTodos()
+            "roles" => (new Rol())->find()
         ));
     }
     public function edit(){        
@@ -69,7 +71,7 @@ class UsuariosController extends Controller
                     $usuario = new Usuario($_POST['hid'], $_POST['txtnick'], md5($_POST['txtpass']), $_POST['txtcor'], $_POST['txtnom'],$_POST['txtape'], 1, $rol);
                     $id = $usuario->save();  
                     Session::set("msg",(isset($id)) ? "Usuario Editado" : Session::get('msg'));
-                    header("Location:index.php?c=usuarios&a=index");
+                    header("Location:index.php?b=backend&c=usuarios&a=index");
                     exit();
                 }
             }
@@ -86,7 +88,7 @@ class UsuariosController extends Controller
                 $usuario = (new Usuario())->findById($_GET['p']);
                 $id = $usuario->del();                
                 Session::set("msg", (isset($id)) ? "Usuario Borrado" : "No se pudo borrar el usuario");
-                header("Location:index.php?c=usuarios&a=index");
+                header("Location:index.php?b=backend&c=usuarios&a=index");
             }            
         }
     }
@@ -96,7 +98,7 @@ class UsuariosController extends Controller
                 $usuario = (new Usuario())->findById($_GET['p']);
                 $id = $usuario->rec();
                 Session::set("msg", (isset($id)) ? "Usuario Reactivado" : "No se pudo reactivar el usuario");
-                header("Location:index.php?c=usuarios&a=index");
+                header("Location:index.php?b=backend&c=usuarios&a=index");
             }        
         }
     }

@@ -22,7 +22,7 @@ class TiposvehController extends Controller
                     $tv = new TipoVehiculo(0, $_POST['txtnom']);
                     $id = $tv->save();
                     Session::set("msg",(isset($id)) ? "Tipo de Vehículo Creado" : Session::get('msg'));
-                    header("Location:index.php?c=tiposveh&a=index");
+                    header("Location:index.php?b=backend&c=tiposveh&a=index");
                     exit();
                 }
             }            
@@ -37,7 +37,7 @@ class TiposvehController extends Controller
                     $tv = new TipoVehiculo($_POST['hid'], $_POST['txtnom']);
                     $id = $tv->save();
                     Session::set("msg",(isset($id)) ? "Tipo de Vehículos Editado" : Session::get('msg'));
-                    header("Location:index.php?c=tiposveh&a=index");
+                    header("Location:index.php?b=backend&c=tiposveh&a=index");
                     exit();
                 }
             }
@@ -52,7 +52,7 @@ class TiposvehController extends Controller
                 $tv = (new TipoVehiculo())->findById($_GET['p']); 
                 $id = $tv->del($tv);
                 Session::set("msg", (isset($id)) ? "Tipo de Vehículo Borrado" : "No se pudo borrar el tipo");
-                header("Location:index.php?c=tiposveh&a=index");
+                header("Location:index.php?b=backend&c=tiposveh&a=index");
             }                            
         }
     }

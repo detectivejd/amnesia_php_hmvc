@@ -1,5 +1,5 @@
 <?php
-namespace \Src\BackendBundle\Model;
+namespace Src\BackendBundle\Model;
 use \PDO;
 use \App\Model;
 use \App\Session;

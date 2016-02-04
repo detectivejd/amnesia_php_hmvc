@@ -22,7 +22,7 @@ class RolesController extends Controller
                     $rol = new Rol(0, $_POST['txtnom']);
                     $id = $rol->save();
                     Session::set("msg",(isset($id)) ? "Rol Creado" : Session::get('msg')); 
-                    header("Location:index.php?c=roles&a=index");
+                    header("Location:index.php?b=backend&c=roles&a=index");
                     exit();
                 }
             }
@@ -37,7 +37,7 @@ class RolesController extends Controller
                     $rol= new Rol($_POST['hid'],$_POST['txtnom']);
                     $id = $rol->save();
                     Session::set("msg",(isset($id)) ? "Rol Editado" : Session::get('msg'));
-                    header("Location:index.php?c=roles&a=index");
+                    header("Location:index.php?b=backend&c=roles&a=index");
                     exit();
                 }
             }
@@ -52,7 +52,7 @@ class RolesController extends Controller
                 $rol = (new Rol())->findById($_GET['p']);
                 $id= $rol->del();
                 Session::set("msg", (isset($id)) ? "Rol Borrado" : "No se pudo borrar el rol");
-                header("Location:index.php?c=roles&a=index");
+                header("Location:index.php?b=backend&c=roles&a=index");
             }                           
         }
     }

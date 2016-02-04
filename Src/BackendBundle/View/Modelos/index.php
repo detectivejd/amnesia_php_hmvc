@@ -2,7 +2,7 @@
     <p>
         <a href="index.php?b=backend&c=modelos&a=add">[Crear]</a>&nbsp;
         <a href="index.php?b=backend&c=usuarios&a=tareas">[Volver]</a>
-        <form name="frmsearch" method="post" action="index.php?c=modelos&a=index"> 
+        <form name="frmsearch" method="post" action="index.php?b=backend&c=modelos&a=index"> 
             <label for="nick">Buscar por Nombre:</label>&nbsp;
             <input type="search" name="txtbuscador" id="nick" />&nbsp;
             <input type="button" onclick="frmsearch.submit();" name="btnsearch" value="Aceptar" />

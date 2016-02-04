@@ -42,7 +42,7 @@ class ComprasController extends Controller
                     $veh->quitarStock($com->getCant());
                     $veh->save();
                     Session::set("msg","Compra Creada");
-                    header("Location:index.php?c=compras&a=index");
+                    header("Location:index.php?b=backend&c=compras&a=index");
                     exit();
                 }
             }
@@ -72,7 +72,7 @@ class ComprasController extends Controller
                     $veh->quitarStock($com->getCant());
                     $veh->save();
                     Session::set("msg","Compra Editada");
-                    header("Location:index.php?c=compras&a=index");
+                    header("Location:index.php?b=backend&c=compras&a=index");
                     exit();
                  }
             }

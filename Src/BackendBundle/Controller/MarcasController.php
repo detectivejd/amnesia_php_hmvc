@@ -26,7 +26,7 @@ class MarcasController extends Controller
                     $marca = new Marca(0, $_POST['txtnom']);
                     $id = $marca->save();
                     Session::set("msg",(isset($id)) ? "Marca Creada" : Session::get('msg')); 
-                    header("Location:index.php?c=marcas&a=index");
+                    header("Location:index.php?b=backend&c=marcas&a=index");
                     exit();
                 }
             }
@@ -41,7 +41,7 @@ class MarcasController extends Controller
                     $marca = new Marca($_POST['hid'], $_POST['txtnom']);
                     $id = $marca->save();
                     Session::set("msg",(isset($id)) ? "Marca Editada" : Session::get('msg'));
-                    header("Location:index.php?c=marcas&a=index");
+                    header("Location:index.php?b=backend&c=marcas&a=index");
                     exit();
                 }
             }
@@ -56,7 +56,7 @@ class MarcasController extends Controller
                 $marca = (new Marca())->findById($_GET['p']);
                 $id = $marca->del();
                 Session::set("msg", (isset($id)) ? "Marca Borrada" : "No se pudo borrar la marca");
-                header("Location:index.php?c=marcas&a=index");
+                header("Location:index.php?b=backend&c=marcas&a=index");
             }                           
         }
     }

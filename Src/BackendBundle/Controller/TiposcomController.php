@@ -22,7 +22,7 @@ class TiposcomController extends Controller
                     $tc= new TipoCompra(0, $_POST['txtnom']);
                     $id = $tc->save();
                     Session::set("msg",(isset($id)) ? "Tipo de Compra Creada" : Session::get('msg'));
-                    header("Location:index.php?c=tiposcom&a=index");
+                    header("Location:index.php?b=backend&c=tiposcom&a=index");
                     exit();
                 }
             }
@@ -37,7 +37,7 @@ class TiposcomController extends Controller
                     $tc= new TipoCompra($_POST['hid'], $_POST['txtnom']);
                     $id = $tc->save();
                     Session::set("msg",(isset($id)) ? "Tipo de Compra Editada" : Session::get('msg'));
-                    header("Location:index.php?c=tiposcom&a=index"); 
+                    header("Location:index.php?b=backend&c=tiposcom&a=index"); 
                     exit();
                 }
             }
@@ -52,7 +52,7 @@ class TiposcomController extends Controller
                 $tc = (new TipoCompra())->findById($_GET['p']); 
                 $id = $tc->del($tc);
                 Session::set("msg", (isset($id)) ? "Tipo de Compra Borrada" : "No se pudo borrar el tipo");
-                header("Location:index.php?c=tiposcom&a=index");
+                header("Location:index.php?b=backend&c=tiposcom&a=index");
             }                           
         }
         else {

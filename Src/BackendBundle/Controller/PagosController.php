@@ -36,7 +36,7 @@ class PagosController extends Controller
                     $pago = new Pago($_POST['hpag'], $_POST['hfec'],$com->generarFecVenc(), $_POST['txtmonto'],$_POST['txtcuotas']);
                     $com->add_pago($pago);
                     Session::set("msg","Monto Depositado: $".$pago->getMonto()." Cambio: $".($pago->getMonto() - $com->obtenerPagoMinimo() * $pago->getCuotas()));                     
-                    header("Location:index.php?c=pagos&a=index&p=".$com->getId());
+                    header("Location:index.php?b=backend&c=pagos&a=index&p=".$com->getId());
                     exit();                
                 }
             }
@@ -54,7 +54,7 @@ class PagosController extends Controller
                 $pag= $com->find_pago($_GET['pag']);
                 $id = $com->del_pago($pag);
                 Session::set("msg", (isset($id)) ? "Pago Borrado" : "No se pudo borrar el pago");
-                header("Location:index.php?c=pagos&a=index&p=".$com->getId());
+                header("Location:index.php?b=backend&c=pagos&a=index&p=".$com->getId());
             }                           
         }
     }

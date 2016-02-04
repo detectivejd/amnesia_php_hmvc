@@ -39,7 +39,7 @@ class VehiculosController extends Controller
                             $veh= new Vehiculo(0,$_POST['txtmat'],$_POST['txtprecio'],$_POST['txtcant'],$_POST['txtdes'],$ruta,1,$modelo,$tipo);
                             $id = $veh->save();
                             Session::set("msg",(isset($id)) ? "Vehículo Creado" : Session::get('msg'));
-                            header("Location:index.php?c=vehiculos&a=index");
+                            header("Location:index.php?b=backend&c=vehiculos&a=index");
                             exit();
                         }
                     }
@@ -63,7 +63,7 @@ class VehiculosController extends Controller
                     $veh= new Vehiculo($_POST['hid'],$_POST['txtmat'],$_POST['txtprecio'],$_POST['txtcant'],$_POST['txtdes'],'',1,$modelo,$tipo);
                     $id = $veh->save();
                     Session::set("msg",(isset($id)) ? "Vehículo Editado" : Session::get('msg'));
-                    header("Location:index.php?c=vehiculos&a=index");
+                    header("Location:index.php?b=backend&c=vehiculos&a=index");
                     exit();                                                     
                 }
             }
@@ -83,7 +83,7 @@ class VehiculosController extends Controller
                         $veh = (new Vehiculo())->findById(Session::get('id'));
                         $veh->setFoto($ruta);
                         $veh->saveImg();
-                        header("Location:index.php?c=vehiculos&a=edit&p=".$veh->getId());
+                        header("Location:index.php?b=backend&c=vehiculos&a=edit&p=".$veh->getId());
                         exit();                    
                     }
                 }                                             
@@ -99,7 +99,7 @@ class VehiculosController extends Controller
                 $veh = (new Vehiculo())->findById($_GET['p']);
                 $id = $veh->del();
                 Session::set("msg", (isset($id)) ? "Vehículo Borrado" : "No se pudo borrar el vehículo");
-                header("Location:index.php?c=vehiculos&a=index");               
+                header("Location:index.php?b=backend&c=vehiculos&a=index");               
             }            
         }
     }
@@ -109,7 +109,7 @@ class VehiculosController extends Controller
                 $veh = (new Vehiculo())->findById($_GET['p']);
                 $id = $veh->rec();
                 Session::set("msg", (isset($id)) ? "Vehículo Reactivado" : "No se pudo reactivar el vehículo");
-                header("Location:index.php?c=vehiculos&a=index");                
+                header("Location:index.php?b=backend&c=vehiculos&a=index");                
             }                     
         }
     }

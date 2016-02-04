@@ -31,7 +31,7 @@ class ModelosController extends Controller
                     $modelo = new Modelo(0,$_POST['txtnom'] , $marca);
                     $id = $modelo->save();
                     Session::set("msg",(isset($id)) ? "Modelo Creado" : Session::get('msg')); 
-                    header("Location:index.php?c=modelos&a=index");
+                    header("Location:index.php?b=backend&c=modelos&a=index");
                     exit();
                 }
             }
@@ -51,7 +51,7 @@ class ModelosController extends Controller
                     $modelo = new Modelo($_POST['hid'],$_POST['txtnom'] , $marca);
                     $id = $modelo->save();
                     Session::set("msg",(isset($id)) ? "Modelo Editado" : Session::get('msg'));
-                    header("Location:index.php?c=modelos&a=index");
+                    header("Location:index.php?b=backend&c=modelos&a=index");
                     exit();
                 }
             }
@@ -67,7 +67,7 @@ class ModelosController extends Controller
                 $modelo= (new Modelo)->findById($_GET['p']);
                 $id = $modelo->del();
                 Session::set("msg", (isset($id)) ? "Modelo Borrado" : "No se pudo borrar el modelo");
-                header("Location:index.php?c=modelos&a=index"); 
+                header("Location:index.php?b=backend&c=modelos&a=index"); 
             }                           
         }
     }
