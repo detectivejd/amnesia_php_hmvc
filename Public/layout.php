@@ -9,12 +9,13 @@
     <body>
         <body>
             <div id="main">
-                <div id="header">
-                    <div id="logo">
-                        <h1><a href="index.php?c=main&a=index">1. MVC + php</a></h1>
-                    </div>
-                    <div id="menu">  
-                        <div id="top_menu">
+                <div style="text-align: center">
+                    <a href="index.php?c=main&a=index" title="Inicio">
+                        <img src="Public/img/audi-a3-cabrio.png" />
+                    </a>                    
+                </div>
+                <header>
+                        <nav>
                             <ul>
                                 <?php if(\App\Session::isLoggedIn() == true){ ?>
                                     <?php if(\App\Session::get("log_in")!= null and \App\Session::get("log_in")->getRol()->getNombre() == "ADMIN"){ ?>
@@ -26,11 +27,10 @@
                                 <?php } else { ?>
                                     <li><a href="index.php?b=backend&c=usuarios&a=login">Iniciar Sesión</a></li>
                                     <li><a href="index.php?b=backend&c=usuarios&a=add">Registrarse</a></li>                                    
-                                <?php } ?>
+                                <?php } ?>    
                             </ul>
-                        </div>
-                    </div>
-                </div>
+                        </nav>                    
+                </header>
                 <div id="content">
                     <?php  
                         if (\App\Session::get('msg')!=null) {  
@@ -40,9 +40,9 @@
                         echo $content;
                     ?>
                 </div>
-                <div id="footer">
-                    Copyright &copy; 2015 --- Escuela T&eacute;cnica Superior
-                </div>
-        </div>
+                <footer>
+                    Copyright &copy; <?php echo date("Y"); ?> -- Reservados todos los derechos
+                </footer>
+            </div>
     </body>
 </html>
