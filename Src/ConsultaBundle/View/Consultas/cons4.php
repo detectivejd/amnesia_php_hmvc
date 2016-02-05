@@ -1,6 +1,6 @@
 <h3>Mostrar Mis Compras y Pagos</h3>
 <p>
-    <a href="index.php?b=consulta&c=consultas&a=index">[Volver]</a>
+    <a href="index.php?b=consulta&c=consultas&a=index" title="Volver"><img src="Public/img/go_previous.png" /></a>
 </p>
 <?php foreach($compras as $compra){?>
     <p>

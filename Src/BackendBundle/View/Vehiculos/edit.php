@@ -25,7 +25,7 @@
             <td><label for="foto">Foto del Vehículo:</label></td>
             <td>
                 <img src="<?php echo $vehiculo->getFoto(); ?>" width='174' height='100'>&nbsp;
-                <a href="index.php?b=backend&c=vehiculos&a=foto">[Cambiar]</a>
+                <a href="index.php?b=backend&c=vehiculos&a=foto" title="Cambiar"><img src="Public/img/picture_edit.png" /></a>
             </td>
         </tr>
         <tr>

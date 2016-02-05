@@ -1,7 +1,7 @@
 <h3>Mantenimiento de Compras</h3>
 <p>
-    <a href="index.php?b=backend&c=compras&a=add">[Crear]</a>&nbsp;
-    <a href="index.php?b=backend&c=usuarios&a=tareas">[Volver]</a>
+    <a href="index.php?b=backend&c=compras&a=add" title="Crear"><img src="Public/img/increase.png" /></a>&nbsp;
+    <a href="index.php?b=backend&c=usuarios&a=tareas" title="Volver"><img src="Public/img/go_previous.png" /></a>
     <form name="frmsearch" method="post" action="index.php?b=backend&c=compras&a=index">
         <label for="nick">Buscar por Usuario:</label>&nbsp;
         <input type="search" name="txtbuscador" id="nick" />&nbsp;
@@ -19,9 +19,9 @@
     <tbody>
         <?php foreach($compras as $compra){?>
             <tr>
-                <td><a href="index.php?b=backend&c=compras&a=view&p=<?php echo $compra->getId(); ?>">[Ver]</a></td>
-                <td><a href="index.php?b=backend&c=compras&a=edit&p=<?php echo $compra->getId(); ?>">[Editar]</a></td>
-                <td><a href="index.php?b=backend&c=pagos&a=index&p=<?php echo $compra->getId(); ?>">[Pagos]</a></td>
+                <td><a href="index.php?b=backend&c=compras&a=view&p=<?php echo $compra->getId(); ?>" title="Ver"><img src="Public/img/black_view.png" /></a></td>
+                <td><a href="index.php?b=backend&c=compras&a=edit&p=<?php echo $compra->getId(); ?>" title="Editar"><img src="Public/img/notebook_edit.png" /></a></td>
+                <td><a href="index.php?b=backend&c=pagos&a=index&p=<?php echo $compra->getId(); ?>" title="Pagos"><img src="Public/img/cash.png" /></a></td>
                 <td><?php echo $compra->getId(); ?></td>
                 <td><?php echo $compra->getUser()->getNick(); ?></td>
                 <td><?php echo $compra->getFecha(); ?></td>

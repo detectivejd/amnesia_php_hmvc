@@ -100,7 +100,7 @@ class Vehiculo implements IPersiste
     }
     public function del(){
         $this->xmodelo = new VehiculoModel();
-        return $this->xmodelo->eliminame($this);
+        return $this->xmodelo->delete($this);
     }
     public function rec(){
         $this->xmodelo = new VehiculoModel();

@@ -3,6 +3,7 @@
     <head>
         <title>Intento de MVC con php</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+        <link rel="icon" type="image/png" href="Public/img/car_key.png" />
         <link href="Public/css/estilos.css" rel="stylesheet" type="text/css" />                
     </head>
     <body>
