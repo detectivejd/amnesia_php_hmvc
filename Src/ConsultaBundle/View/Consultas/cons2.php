@@ -2,7 +2,7 @@
 <p>
     <a href="index.php?b=consulta&c=consultas&a=index" title="Volver"><img src="Public/img/go_previous.png" /></a>    
 </p>
-<table>
+<table class="table1">
     <thead>
         <th>Compra</th>
         <th>Usuario</th>

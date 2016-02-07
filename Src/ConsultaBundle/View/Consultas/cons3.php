@@ -7,7 +7,7 @@
         <input type="button" name="btnaceptar" value="Aceptar" onclick="frmcons3.submit();" />
     </form>    
 </p>
-<table>
+<table class="table1">
     <thead>
         <th>Compra</th>
         <th>Usuario</th>

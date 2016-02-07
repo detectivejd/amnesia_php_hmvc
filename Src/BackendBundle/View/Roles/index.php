@@ -3,7 +3,7 @@
         <a href="index.php?b=backend&c=roles&a=add" title="Crear"><img src="Public/img/increase.png" /></a>&nbsp;
         <a href="index.php?b=backend&c=usuarios&a=tareas" title="Volver"><img src="Public/img/go_previous.png" /></a>
     </p>    
-    <table> 
+    <table class="table1"> 
         <thead>
             <th colspan="2"></th>
             <th>Rol</th>

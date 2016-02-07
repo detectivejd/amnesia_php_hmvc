@@ -8,7 +8,7 @@
     <strong>Pago Mínimo:<?php echo " $" .$compra->obtenerPagoMinimo(); ?></strong>&nbsp;
     <strong>Cuotas Restantes:<?php echo " " .$compra->obtenerCuotasRestantes(); ?></strong>
 </p>
-<table>
+<table class="table1">
     <thead>
         <th></th>
         <th>Pago</th>

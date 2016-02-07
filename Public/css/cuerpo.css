@@ -33,30 +33,7 @@ header{
 	height: 50px;
 }
 
-#logo{
-	width: 270px;
-	float: left;
-	margin: 0;
-	padding: 10px 10px 10px 20px;
-	height: 80px;
-}
-
-#logo h1{
-	color: #FFFFFF;
-	line-height: 80px;
-	text-shadow: 0 0 0;
-	margin: 0;
-}
-
-#menu{
-	width: 580px;
-	height: 80px;
-	float: left;
-	margin: 0;
-	padding: 10px;
-}
-
-#content{
+section{
     color: #6E6E6E;
     padding: 20px 20px 20px 50px;
     background: white;
@@ -69,7 +46,7 @@ header{
     overflow: hidden;
 }
 
-#content h1, h2 {
+section h1, h2 {
 	color: #0B3861;
 }
 

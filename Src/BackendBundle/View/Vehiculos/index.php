@@ -11,7 +11,7 @@
 </p>
 <?php foreach ($vehiculos as $vehiculo){ ?>
 <p>
-    <table>
+    <table class="table1">
         <tr>
             <td rowspan="9">
                 <img src="<?php echo $vehiculo->getFoto(); ?>" width='150' height='100'>

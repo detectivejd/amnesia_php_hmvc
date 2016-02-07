@@ -9,7 +9,7 @@
                 <?php echo "Compra: ".$compra->getId()." Fecha: ".$compra->getFecha()." Vehículo: ".$compra->getVeh()->getMat(); ?>
             </summary> 
             <br />
-            <table>
+            <table class="table1">
                 <thead>
                     <th>Pago</th>
                     <th>Fecha de Pago</th>

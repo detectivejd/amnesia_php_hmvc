@@ -8,7 +8,7 @@
         <input type="button" onclick="frmsearch.submit();" name="btnsearch" value="Aceptar" />
     </form>
 </p>
-<table>
+<table class="table1">
     <thead>
         <th colspan="3"></th>
         <th>Compra</th>
