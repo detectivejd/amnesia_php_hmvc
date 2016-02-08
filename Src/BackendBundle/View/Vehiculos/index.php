@@ -4,8 +4,7 @@
     <a href="index.php?b=backend&c=pdf&a=rep_vehiculos" target="_blank" title="Reporte"><img src="Public/img/printer.png" /></a>&nbsp;
     <a href="index.php?b=backend&c=usuarios&a=tareas" title="Volver"><img src="Public/img/go_previous.png" /></a>
     <form name="frmsearch" method="post" action="index.php?b=backend&c=vehiculos&a=index"> 
-        <label for="nick">Buscar por Matrícula:</label>&nbsp;
-        <input type="search" name="txtbuscador" id="nick" />&nbsp;
+        <input type="search" name="txtbuscador" placeholder="Buscar por Matrícula" />&nbsp;
         <input type="button" onclick="frmsearch.submit();" name="btnsearch" value="Aceptar" />
     </form>
 </p>

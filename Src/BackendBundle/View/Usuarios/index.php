@@ -3,8 +3,7 @@
         <a href="index.php?b=backend&c=usuarios&a=add" title="Crear"><img src="Public/img/increase.png" /></a>&nbsp;
         <a href="index.php?b=backend&c=usuarios&a=tareas" title="Volver"><img src="Public/img/go_previous.png" /></a>&nbsp;
         <form name="frmsearch" method="post" action="index.php?b=backend&c=usuarios&a=index"> 
-            <label for="nick">Buscar por username:</label>&nbsp;
-            <input type="search" name="txtbuscador" id="nick" />&nbsp;
+            <input type="search" name="txtbuscador" placeholder="Buscar por username" />&nbsp;
             <input type="button" onclick="frmsearch.submit();" name="btnsearch" value="Aceptar" />
         </form>
     </p>    
