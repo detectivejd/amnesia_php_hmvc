@@ -29,7 +29,7 @@
             </td>
         </tr>
         <tr>
-            <td>Modelo del Vehículo:</td>
+            <td><label for="mod">Modelo del Vehículo:</label></td>
             <td>
                 <input id="mod" list="modelos" required="required" name="txtmod" value="<?php echo $vehiculo->getModelo()->getId(); ?>" />
                 <datalist id="modelos">
@@ -43,7 +43,7 @@
         <tr>
             <td><label for="tipo">Tipo del Vehículo:</label></td>
             <td>
-                <input id="mod" list="tipos" required="required" name="txt_tipo" value="<?php echo $vehiculo->getTipo()->getId(); ?>" />
+                <input id="tipo" list="tipos" required="required" name="txt_tipo" value="<?php echo $vehiculo->getTipo()->getId(); ?>" />
                 <datalist id="tipos">
                     <?php foreach ($tiposveh as $tipoveh) { ?>
                         <option value="<?php echo $tipoveh->getId(); ?>"><?php echo $tipoveh->getNombre(); ?></option>

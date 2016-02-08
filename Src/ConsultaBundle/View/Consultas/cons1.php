@@ -29,18 +29,18 @@
 <?php if ($paginador != null) { ?> 
     <br />
     <?php if($paginador['primero']) { ?>	
-        <a href="<?php echo 'index.php?b=consulta&c=compras&a=index&p=' . $paginador['primero']; ?>">[Primero]</a>        
+        <a href="<?php echo 'index.php?b=consulta&c=consultas&a=cons1&p=' . $paginador['primero']; ?>" title="Primero"><img src="Public/img/go_first_page.png" /></a>        
     <?php } ?>
     &nbsp;
     <?php if($paginador['anterior']) { ?>	
-        <a href="<?php echo 'index.php?b=consulta&c=compras&a=index&p=' . $paginador['anterior']; ?>">[Anterior]</a>	
+        <a href="<?php echo 'index.php?b=consulta&c=consultas&a=cons1&p=' . $paginador['anterior']; ?>" title="Anterior"><img src="Public/img/go_previous_page.png" /></a>	
     <?php } ?>
     &nbsp;
     <?php if($paginador['siguiente']) { ?>	
-        <a href="<?php echo 'index.php?b=consulta&c=compras&a=index&p=' . $paginador['siguiente']; ?>">[Siguiente]</a>
+        <a href="<?php echo 'index.php?b=consulta&c=consultas&a=cons1&p=' . $paginador['siguiente']; ?>" title="Siguiente"><img src="Public/img/go_next_page.png" /></a>
     <?php } ?>
     &nbsp;
     <?php if($paginador['ultimo']) { ?>	
-        <a href="<?php echo 'index.php?b=consulta&c=compras&a=index&p=' . $paginador['ultimo']; ?>">[Último]</a>	
+        <a href="<?php echo 'index.php?b=consulta&c=consultas&a=cons1&p=' . $paginador['ultimo']; ?>" title="Último"><img src="Public/img/go_last_page.png" /></a>	
     <?php }     
     } ?>
