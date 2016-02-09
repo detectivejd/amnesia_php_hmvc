@@ -1,7 +1,6 @@
 <?php
 namespace Src\FrontendBundle\Controller;
-use \App\Controller;
-class MainController extends Controller 
+class MainController extends AppController 
 {    
     function __construct() {
         parent::__construct();

@@ -1,9 +1,8 @@
 <?php
 namespace Src\BackendBundle\Controller;
-use \App\Controller;
 use \App\Session;
 use \Src\BackendBundle\Clases\Marca;
-class MarcasController extends Controller
+class MarcasController extends AppController
 {
     function __construct() {        
         parent::__construct();

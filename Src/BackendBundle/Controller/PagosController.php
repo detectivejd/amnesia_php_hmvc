@@ -1,10 +1,9 @@
 <?php
 namespace Src\BackendBundle\Controller;
-use \App\Controller;
 use \App\Session;
 use \Src\BackendBundle\Clases\Compra;
 use \Src\BackendBundle\Clases\Pago;
-class PagosController extends Controller
+class PagosController extends AppController
 {
     function __construct() {
         parent::__construct();

@@ -1,12 +1,11 @@
 <?php
 namespace Src\BackendBundle\Controller;
-use \App\Controller;
 use \App\Session;
 use \Src\BackendBundle\Clases\TipoCompra;
 use \Src\BackendBundle\Clases\Usuario;
 use \Src\BackendBundle\Clases\Vehiculo;
 use \Src\BackendBundle\Clases\Compra;
-class ComprasController extends Controller
+class ComprasController extends AppController
 {
     function __construct() {
         parent::__construct();        

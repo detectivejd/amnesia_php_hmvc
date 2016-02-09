@@ -1,9 +1,8 @@
 <?php
 namespace Src\ConsultaBundle\Controller;
-use \App\Controller;
 use \App\Session;
 use \Src\ConsultaBundle\Clases\Consulta;
-class ConsultasController extends Controller
+class ConsultasController extends AppController
 {
     function __construct() {
         parent::__construct();

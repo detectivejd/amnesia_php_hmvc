@@ -1,9 +1,8 @@
 <?php
 namespace Src\BackendBundle\Controller;
-use \App\Controller;
 use \App\Session;
 use \Src\BackendBundle\Clases\TipoVehiculo;
-class TiposvehController extends Controller
+class TiposvehController extends AppController
 {
     function __construct() {
         parent::__construct();

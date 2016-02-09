@@ -1,10 +1,9 @@
 <?php
 namespace Src\BackendBundle\Controller;
-use \App\Controller;
 use \App\Session;
 use \Src\BackendBundle\Clases\Marca;
 use \Src\BackendBundle\Clases\Modelo;
-class ModelosController extends Controller
+class ModelosController extends AppController
 {
     function __construct() {
         parent::__construct();
