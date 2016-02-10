@@ -1,10 +1,9 @@
 <?php
 namespace Src\BackendBundle\Model;
 use \PDO;
-use \App\Model;
 use \App\Session;
 use \Src\BackendBundle\Clases\TipoCompra;
-class TipocomModel extends Model
+class TipocomModel extends AppModel
 {
     function __construct() {
         parent::__construct();

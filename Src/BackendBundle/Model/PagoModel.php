@@ -1,9 +1,8 @@
 <?php
 namespace Src\BackendBundle\Model;
 use \PDO;
-use \App\Model;
 use \Src\BackendBundle\Clases\Pago;
-class PagoModel extends Model
+class PagoModel extends AppModel
 {
     function __construct() {
         parent::__construct();

@@ -1,10 +1,9 @@
 <?php
 namespace Src\BackendBundle\Model;
 use \PDO;
-use \App\Model;
 use \App\Session;
 use \Src\BackendBundle\Clases\Rol;
-class RolModel extends Model
+class RolModel extends AppModel
 {
     function __construct() {
         parent::__construct();

@@ -1,13 +1,12 @@
 <?php
 namespace Src\ConsultaBundle\Model;
 use \PDO;
-use \App\Model;
 use \Src\BackendBundle\Model\TipocomModel;
 use \Src\BackendBundle\Model\UsuarioModel;
 use \Src\BackendBundle\Model\VehiculoModel;
 use \Src\BackendBundle\Clases\Compra;
 use \Src\BackendBundle\Clases\Pago;
-class ConsultaModel extends Model
+class ConsultaModel extends AppModel
 {
     function __construct() {
         parent::__construct();

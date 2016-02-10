@@ -1,10 +1,9 @@
 <?php
 namespace Src\BackendBundle\Model;
 use \PDO;
-use \App\Model;
 use \App\Session;
 use \Src\BackendBundle\Clases\Usuario;
-class UsuarioModel extends Model
+class UsuarioModel extends AppModel
 {    
     private $mod_r;
     function __construct() {

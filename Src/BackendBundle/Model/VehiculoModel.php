@@ -1,11 +1,10 @@
 <?php
 namespace Src\BackendBundle\Model;
 use \PDO;
-use \App\Model;
 use \App\Session;
 use \Src\BackendBundle\Clases\Modelo;
 use \Src\BackendBundle\Clases\Vehiculo;
-class VehiculoModel extends Model
+class VehiculoModel extends AppModel
 {
     private $mod_tv;
     private $mod_mar;
