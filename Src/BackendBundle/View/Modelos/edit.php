@@ -1,5 +1,5 @@
 <h3>Editar Modelo</h3>
-<form method="post" action="index.php?b=backend&c=modelos&a=edit&p=<?php echo \App\Session::get('id'); ?>" name="frmedit_mod">
+<form method="post" action="index.php?c=modelos&a=edit&p=<?php echo \App\Session::get('id'); ?>" name="frmedit_mod">
     <table>
         <tr>
             <td><label for="id">Número del Rol:</label></td>
@@ -24,6 +24,6 @@
     </table>
     <p>
         <input type="submit" value="Aceptar" name="btnaceptar" />&nbsp;
-        <a href="index.php?b=backend&c=modelos&a=index"><input type="button" value="Cancelar" /></a>
+        <a href="index.php?c=modelos&a=index"><input type="button" value="Cancelar" /></a>
     </p>
 </form>

@@ -1,5 +1,5 @@
 <h3>Editar Compra</h3>
-<form action="index.php?b=backend&c=compras&a=edit&p=<?php echo \App\Session::get('id'); ?>" method="post" name="frmedit_com">
+<form action="index.php?c=compras&a=edit&p=<?php echo \App\Session::get('id'); ?>" method="post" name="frmedit_com">
     <table>
         <tr>
             <td><label for="id">Número de Compra:</label></td>
@@ -55,6 +55,6 @@
     </table>
     <p>
         <input type="submit" value="Aceptar" name="btnaceptar" />&nbsp;
-        <a href="index.php?b=backend&c=compras&a=index"><input type="button" value="Cancelar" /></a>
+        <a href="index.php?c=compras&a=index"><input type="button" value="Cancelar" /></a>
     </p>
 </form>

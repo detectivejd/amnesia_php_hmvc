@@ -1,5 +1,5 @@
 <h3>Crear Vehículo</h3>
-<form method="post" action="index.php?b=backend&c=vehiculos&a=add" name="frm_addveh" enctype="multipart/form-data">
+<form method="post" action="index.php?c=vehiculos&a=add" name="frm_addveh" enctype="multipart/form-data">
     <table>
         <tr>
             <td><label for="mat">Matrícula del Vehículo: (*)</label></td>
@@ -47,6 +47,6 @@
     </table>
     <p>
         <input type="submit" value="Aceptar" name="btnaceptar" />&nbsp;
-        <a href="index.php?b=backend&c=vehiculos&a=index"><input type="button" value="Cancelar" /></a>
+        <a href="index.php?c=vehiculos&a=index"><input type="button" value="Cancelar" /></a>
     </p>
 </form>

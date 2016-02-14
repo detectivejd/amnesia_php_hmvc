@@ -1,5 +1,5 @@
     <h3>Autenticar Usuario</h3>
-    <form method="post" action="index.php?b=backend&c=usuarios&a=login">
+    <form method="post" action="index.php?c=usuarios&a=login">
         <table>
             <tr>
                 <td><label for="user">Usuario: </label></td>

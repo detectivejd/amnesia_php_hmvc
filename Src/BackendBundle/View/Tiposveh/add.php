@@ -1,4 +1,4 @@
-    <form method="post" name="frmadd_tv" action="index.php?b=backend&c=tiposveh&a=add">
+    <form method="post" name="frmadd_tv" action="index.php?c=tiposveh&a=add">
         <table>
             <tr>
                 <td><label for="nom">Nombre del Tipo:</label></td>
@@ -7,6 +7,6 @@
         </table>
         <p>
             <input type="submit" value="Aceptar" name="btnaceptar" />&nbsp;
-            <a href="index.php?b=backend&c=tiposveh&a=index"><input type="button" value="Cancelar" name="btncancelar" /></a>            
+            <a href="index.php?c=tiposveh&a=index"><input type="button" value="Cancelar" name="btncancelar" /></a>            
         </p>
     </form>

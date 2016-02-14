@@ -1,4 +1,4 @@
-    <form method="post" name="frmedit_rol" action="index.php?b=backend&c=roles&a=edit&p=<?php echo \App\Session::get('id'); ?>">
+    <form method="post" name="frmedit_rol" action="index.php?c=roles&a=edit&p=<?php echo \App\Session::get('id'); ?>">
         <table>
             <tr>
                 <td><label for="id">Número del Rol:</label></td>
@@ -11,6 +11,6 @@
         </table>
         <p>
             <input type="submit" value="Aceptar" name="btnaceptar" />&nbsp;
-            <a href="index.php?b=backend&c=roles&a=index"><input type="button" value="Cancelar" name="btncancelar" /></a>            
+            <a href="index.php?c=roles&a=index"><input type="button" value="Cancelar" name="btncancelar" /></a>            
         </p>
     </form>

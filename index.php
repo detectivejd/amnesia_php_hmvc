@@ -3,16 +3,23 @@
     define("DS", DIRECTORY_SEPARATOR);
     spl_autoload_register(function($clase) {
         try {
-            $file = APPLICATION_PATH . DS . str_replace("\\", DS, $clase) . ".php";
-            require_once $file;        
+            require_once APPLICATION_PATH . DS . str_replace("\\", DS, $clase) . ".php";        
         } 
         catch (Exception $ex) {
             echo $ex->getMessage();
         }
     });
-    $bundle = (!empty($_GET['b'])) ? ucwords($_GET['b']) . 'Bundle' : "FrontendBundle";
     $controlador = (!empty($_GET['c'])) ? ucwords($_GET['c']) . 'Controller' : "MainController";
     $accion = (!empty($_GET['a'])) ? $_GET['a'] : "index";
+    foreach(glob(APPLICATION_PATH . DS . "Src". DS . "*") as $dir) {
+        foreach(glob($dir . DS . "Controller" . DS . "*") as $file){
+            $c = str_replace($dir . DS . "Controller" . DS, "", $file);
+            $c2 = str_replace(".php","",$c);
+            if($c2 == $controlador){
+                $bundle = str_replace(APPLICATION_PATH . DS . "Src". DS, "", $dir);                
+            }
+        }
+    }        
     try {
         $controlador = "Src\\". $bundle . "\\Controller\\" . $controlador;
         $controlo = new $controlador();
