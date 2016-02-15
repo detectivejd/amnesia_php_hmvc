@@ -18,7 +18,7 @@ class RolesController extends AppController
         if($this->checkUser()){
             if (isset($_POST['btnaceptar'])) {
                 if($this->checkDates()) {                
-                    $rol = new Rol(0, $_POST['txtnom']);
+                    $rol= $this->createEntity();
                     $id = $rol->save();
                     Session::set("msg",(isset($id)) ? "Rol Creado" : Session::get('msg')); 
                     header("Location:index.php?b=backend&c=roles&a=index");
@@ -33,7 +33,7 @@ class RolesController extends AppController
             Session::set("id",$_GET['p']);
             if (Session::get('id')!=null && isset($_POST['btnaceptar'])){                             
                 if($this->checkDates()) {                
-                    $rol= new Rol($_POST['hid'],$_POST['txtnom']);
+                    $rol= $this->createEntity();
                     $id = $rol->save();
                     Session::set("msg",(isset($id)) ? "Rol Editado" : Session::get('msg'));
                     header("Location:index.php?b=backend&c=roles&a=index");
@@ -63,6 +63,12 @@ class RolesController extends AppController
         else{
             return true;
         }
+    }
+    private function createEntity(){
+        $obj = new Rol();
+        $obj->setId((isset($_POST['hid'])) ? $_POST['hid'] : 0);
+        $obj->setNombre($_POST['txtnom']);
+        return $obj;
     }
     protected function getMessageRole() {
         return "administrador";

@@ -30,19 +30,12 @@ class VehiculosController extends AppController
             $modelos=(Session::get('mod')!="") ? (new Vehiculo())->findByModelos(Session::get('mod')) : array(); 
             if (isset($_POST['btnaceptar'])) {
                 if($this->checkDates()) {
-                    if(isset($_FILES['foto'])){
-                        $ruta= $this->upload->uploadImage($_FILES['foto']);
-                        if($ruta!= null){
-                            $tipo = (new TipoVehiculo())->findById(htmlspecialchars($_POST['txt_tipo']));
-                            $modelo = (new Modelo())->findById(htmlspecialchars($_POST['txtmod']));                            
-                            $veh= new Vehiculo(0,$_POST['txtmat'],$_POST['txtprecio'],$_POST['txtcant'],$_POST['txtdes'],$ruta,1,$modelo,$tipo);
-                            $id = $veh->save();
-                            Session::set("msg",(isset($id)) ? "Vehículo Creado" : Session::get('msg'));
-                            header("Location:index.php?b=backend&c=vehiculos&a=index");
-                            exit();
-                        }
-                    }
-                }
+                    $veh= $this->createEntity();;
+                    $id = $veh->save();
+                    Session::set("msg",(isset($id)) ? "Vehículo Creado" : Session::get('msg'));
+                    header("Location:index.php?b=backend&c=vehiculos&a=index");
+                    exit();
+                }                                    
             }
             $this->redirect(array('add.php'),array(
                 'modelos' => $modelos,
@@ -57,9 +50,7 @@ class VehiculosController extends AppController
             $modelos = (Session::get('mod')!="") ? (new Vehiculo())->findByModelos(Session::get('mod')) : array();
             if (Session::get('id')!=null && isset($_POST['btnaceptar'])){
                 if($this->checkDates()) {
-                    $tipo = (new TipoVehiculo())->findById($_POST['txt_tipo']);
-                    $modelo = (new Modelo())->findById($_POST['txtmod']);
-                    $veh= new Vehiculo($_POST['hid'],$_POST['txtmat'],$_POST['txtprecio'],$_POST['txtcant'],$_POST['txtdes'],'',1,$modelo,$tipo);
+                    $veh= $this->createEntity();
                     $id = $veh->save();
                     Session::set("msg",(isset($id)) ? "Vehículo Editado" : Session::get('msg'));
                     header("Location:index.php?b=backend&c=vehiculos&a=index");
@@ -131,4 +122,20 @@ class VehiculosController extends AppController
     protected function getTypeRole() {
         return "ADMIN";
     }              
+    protected function createEntity() {
+        $tipo = (new TipoVehiculo())->findById($_POST['txt_tipo']);
+        $modelo = (new Modelo())->findById($_POST['txtmod']);
+        $ruta= (isset($_FILES['foto']) ? $this->upload->uploadImage($_FILES['foto']) : '');       
+        $obj = new Vehiculo();
+        $obj->setId((isset($_POST['hid']) ? $_POST['hid'] : 0));
+        $obj->setMat($_POST['txtmat']);
+        $obj->setPrecio($_POST['txtprecio']);
+        $obj->setCant($_POST['txtcant']);
+        $obj->setDescrip($_POST['txtdes']);
+        $obj->setFoto($row['vehFoto']);
+        $obj->setStatus($ruta);
+        $obj->setModelo($modelo);
+        $obj->setTipo($tipo);
+        return $obj;
+    }
 }

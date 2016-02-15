@@ -48,11 +48,10 @@ class UsuariosController extends AppController
     public function add(){
         if (isset($_POST['btnaceptar'])) {
             if($this->checkDates()) {  
-                $rol = (new Rol())->findById($_POST['txtrol']);
-                $usuario = new Usuario(0, $_POST['txtnick'], md5($_POST['txtpass']), $_POST['txtcor'], $_POST['txtnom'],$_POST['txtape'], 1, $rol);
+                $usuario = $this->createEntity();
                 $id = $usuario->save();
                 Session::set("msg",(isset($id)) ? "Usuario Creado" : Session::get('msg'));
-                $ruta= $this->checkUser() ? "index.php?b=backend&c=usuarios&a=index" : "index.php?c=main&a=index";
+                $ruta= $this->checkUser() ? "index.php?c=usuarios&a=index" : "index.php?c=main&a=index";
                 header("Location:".$ruta);                
                 exit();
             }
@@ -65,9 +64,8 @@ class UsuariosController extends AppController
         if($this->checkUser()){
             Session::set("id",$_GET['p']);
             if (Session::get('id')!=null && isset($_POST['btnaceptar'])){                            
-                if($this->checkDates()) {
-                    $rol = (new Rol())->findById($_POST['txtrol']);
-                    $usuario = new Usuario($_POST['hid'], $_POST['txtnick'], md5($_POST['txtpass']), $_POST['txtcor'], $_POST['txtnom'],$_POST['txtape'], 1, $rol);
+                if($this->checkDates()) {                    
+                    $usuario = $this->createEntity();
                     $id = $usuario->save();  
                     Session::set("msg",(isset($id)) ? "Usuario Editado" : Session::get('msg'));
                     header("Location:index.php?b=backend&c=usuarios&a=index");
@@ -126,5 +124,18 @@ class UsuariosController extends AppController
     }
     protected function getTypeRole() {
         return "ADMIN";
+    }
+    protected function createEntity() {
+        $rol = (new Rol())->findById($_POST['txtrol']);
+        $obj = new Usuario();
+        $obj->setId(isset($_POST['hid']) ? $_POST['hid'] : 0);
+        $obj->setNick($_POST['txtnick']);
+        $obj->setPass(md5($_POST['txtpass']));
+        $obj->setCorreo($_POST['txtcor']); 
+        $obj->setNombre($_POST['txtnom']); 
+        $obj->setApellido($_POST['txtape']); 
+        $obj->setStatus(1); 
+        $obj->setRol($rol); 
+        return $obj;        
     }
 }

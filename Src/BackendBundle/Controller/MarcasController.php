@@ -22,7 +22,7 @@ class MarcasController extends AppController
         if($this->checkUser()){
             if (isset($_POST['btnaceptar'])) {
                 if($this->checkDates()) {  
-                    $marca = new Marca(0, $_POST['txtnom']);
+                    $marca = $this->createEntity();
                     $id = $marca->save();
                     Session::set("msg",(isset($id)) ? "Marca Creada" : Session::get('msg')); 
                     header("Location:index.php?b=backend&c=marcas&a=index");
@@ -37,7 +37,7 @@ class MarcasController extends AppController
         if($this->checkUser()){
             if (Session::get('id')!=null && isset($_POST['btnaceptar'])){                             
                 if($this->checkDates()) {  
-                    $marca = new Marca($_POST['hid'], $_POST['txtnom']);
+                    $marca = $this->createEntity();
                     $id = $marca->save();
                     Session::set("msg",(isset($id)) ? "Marca Editada" : Session::get('msg'));
                     header("Location:index.php?b=backend&c=marcas&a=index");
@@ -73,5 +73,11 @@ class MarcasController extends AppController
     }
     protected function getTypeRole() {
         return "ADMIN";
-    }    
+    }
+    protected function createEntity() {         
+        $obj = new Marca();
+        $obj->setId(isset($_POST['hid']) ? $_POST['hid'] : 0);
+        $obj->setNombre($_POST['txtnom']);
+        return $obj;
+    }
 }

@@ -26,8 +26,7 @@ class ModelosController extends AppController
             $marcas = (Session::get('mar')!="") ? (new Modelo)->findByMarcas(Session::get('mar')) : array();
             if (isset($_POST['btnaceptar'])) {
                 if($this->checkDates()) {
-                    $marca = (new Marca())->findById($_POST['txtmar']);
-                    $modelo = new Modelo(0,$_POST['txtnom'] , $marca);
+                    $modelo = $this->createEntity();
                     $id = $modelo->save();
                     Session::set("msg",(isset($id)) ? "Modelo Creado" : Session::get('msg')); 
                     header("Location:index.php?b=backend&c=modelos&a=index");
@@ -46,8 +45,7 @@ class ModelosController extends AppController
             $marcas = (Session::get('mar')!="") ? (new Modelo)->findByMarcas(Session::get('mar')) : array();
             if (Session::get('id')!=null && isset($_POST['btnaceptar'])){                                         
                 if($this->checkDates()) { 
-                    $marca = (new Marca())->findById($_POST['txtmar']);
-                    $modelo = new Modelo($_POST['hid'],$_POST['txtnom'] , $marca);
+                    $modelo = $this->createEntity();
                     $id = $modelo->save();
                     Session::set("msg",(isset($id)) ? "Modelo Editado" : Session::get('msg'));
                     header("Location:index.php?b=backend&c=modelos&a=index");
@@ -84,5 +82,13 @@ class ModelosController extends AppController
     }
     protected function getTypeRole() {
         return "ADMIN";
+    }
+    protected function createEntity() {
+        $marca = (new Marca())->findById($_POST['txtmar']);
+        $obj = new Modelo();
+        $obj->setId(isset($_POST['hid']) ? $_POST['hid'] : 0);
+        $obj->setNombre($_POST['txtnom']);
+        $obj->setMarca($marca);
+        return $obj;
     }
 }
