@@ -16,7 +16,10 @@
             $c = str_replace($dir . DS . "Controller" . DS, "", $file);
             $c2 = str_replace(".php","",$c);
             if($c2 == $controlador){
-                $bundle = str_replace(APPLICATION_PATH . DS . "Src". DS, "", $dir);                
+                $bundle = str_replace(APPLICATION_PATH . DS . "Src". DS, "", $dir);
+                if(method_exists("Src\\". $bundle . "\\Controller\\" . $controlador, $accion)){
+                    break 2; 
+                }
             }
         }
     }        

@@ -1,6 +1,7 @@
 <h3>Mostrar Compras por fechas</h3>
 <p>
-    <a href="index.php?c=consultas&a=index" title="Volver"><img src="Public/img/go_previous.png" /></a>
+    <a href="index.php?c=consultas&a=index" title="Volver"><img src="Public/img/go_previous.png" /></a>&nbsp;
+    <a href="index.php?c=pdf&a=c3" target="_blank" title="Ver como pdf"><img src="Public/img/printer.png" /></a>
     <form action="index.php?c=consultas&a=cons3" method="post" name="frmcons3">
         <label for="fecini">Fecha de Inicio:</label>&nbsp;<input type="date" name="dtfecini" id="fecini" />&nbsp;
         <label for="fecfin">Fecha de Cierre:</label>&nbsp;<input type="date" name="dtfecfin" id="fecfin" />&nbsp;

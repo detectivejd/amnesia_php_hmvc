@@ -30,7 +30,7 @@ class VehiculosController extends AppController
             $modelos=(Session::get('mod')!="") ? (new Vehiculo())->findByModelos(Session::get('mod')) : array(); 
             if (isset($_POST['btnaceptar'])) {
                 if($this->checkDates()) {
-                    $veh= $this->createEntity();;
+                    $veh= $this->createEntity();
                     $id = $veh->save();
                     Session::set("msg",(isset($id)) ? "Vehículo Creado" : Session::get('msg'));
                     header("Location:index.php?b=backend&c=vehiculos&a=index");
