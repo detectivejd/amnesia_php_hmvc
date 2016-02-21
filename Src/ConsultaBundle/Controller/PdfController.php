@@ -133,6 +133,7 @@ class PdfController extends AppController
                     $this->getPdf()->Cell(30,5,$pago->getFecpago(),null,null,"C");
                     $this->getPdf()->Cell(40,5,$pago->getFecvenc(),null,null,"C");
                     $this->getPdf()->Cell(30,5,"$".$pago->getMonto(),null,null,"C");
+                    $this->getPdf()->Ln(5);
                 }
                 $this->getPdf()->Ln(10);
             }
