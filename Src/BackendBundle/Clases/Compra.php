@@ -60,8 +60,7 @@ class Compra implements IPersiste
     function setPagos($pagos) {
         $this->pagos = $pagos;
     }
-    function __construct() {
-    }
+    function __construct() {}
     public function obtenerPagoTotal(){
         return $this->veh->getPrecio() * $this->cant;
     }

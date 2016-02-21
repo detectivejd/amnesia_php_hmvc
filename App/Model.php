@@ -40,11 +40,7 @@ abstract class Model implements IModel
     }
     /*------------------------------------------------------------------------*/
     private function check($unique) { 
-        $consulta = $this->fetch(
-            $this->getCheckQuery(),
-            $this->getCheckParameter($unique)     
-        );
-        return ($consulta) > 0; 
+        return $this->executeQuery($this->getCheckQuery(), $this->getCheckParameter($unique) );
     }
     abstract protected function getCheckQuery();
     abstract protected function getCheckParameter($unique);
@@ -81,9 +77,7 @@ abstract class Model implements IModel
     /*--------------------------------------------------------------------*/
     public function find($criterio = null) {
         $datos= array();
-        $consulta = $this->getBD()->prepare($this->getFindQuery($criterio));
-        $consulta->execute($this->getFindParameter($criterio)); 
-        foreach($consulta->fetchAll(PDO::FETCH_ASSOC) as $row){
+        foreach($this->fetch($this->getFindQuery($criterio), $this->getFindParameter($criterio)) as $row){
             $obj = $this->createEntity($row); 
             array_push($datos, $obj);
         }
