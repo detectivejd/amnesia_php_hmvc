@@ -35,7 +35,7 @@ abstract class Controller
     protected function getPaginator() {
         return $this->paginador;
     }
-    function getPdf() {
+    protected function getPdf() {
         return $this->pdf;
     }
     protected function checkUser() {
